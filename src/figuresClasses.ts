@@ -12,10 +12,10 @@ export class Triangle implements Figure {
     public c: number,
     readonly shape: 'triangle' = 'triangle',
   ) {
-    const max = Math.max(a, b, c);
-    const sum = [a, b, c].reduce((acc, curr) => acc + curr, 0);
+    const max = Math.max(this.a, this.b, this.c);
+    const sum = [this.a, this.b, this.c].reduce((acc, curr) => acc + curr, 0);
 
-    if (max >= sum - max || a <= 0 || b <= 0 || c <= 0) {
+    if (max >= sum - max || this.a <= 0 || this.b <= 0 || this.c <= 0) {
       throw new Error(
         'the longest side of a triangle is >= than a sum of two others',
       );
@@ -36,7 +36,7 @@ export class Circle implements Figure {
     public radius: number,
     readonly shape: 'circle' = 'circle',
   ) {
-    if (radius <= 0) {
+    if (this.radius <= 0) {
       throw new Error('Radius must be > 0');
     }
   }
